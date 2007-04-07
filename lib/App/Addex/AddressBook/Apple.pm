@@ -15,7 +15,7 @@ App::Addex::Apple - create mail helper files from Apple Address Book
 
 version 0.002
 
-  $Id: /my/cs/projects/App-Addex/trunk/lib/App/Addex/AddressBook/Apple.pm 31335 2007-04-07T20:21:05.598602Z rjbs  $
+  $Id$
 
 =cut
 
