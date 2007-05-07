@@ -9,17 +9,17 @@ use Mac::Glue qw(:glue);
 
 =head1 NAME
 
-App::Addex::Apple - create mail helper files from Apple Address Book
+App::Addex::AddressBook::Apple - use Apple Address Book as the addex source
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
   $Id$
 
 =cut
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 =head1 SYNOPSIS
 
