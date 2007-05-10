@@ -50,6 +50,21 @@ sub _entrify {
     ($fields{sig})    = $note =~ /^sig:\s*(\S+)$/sm;
   }
 
+  my $name;
+
+  if (my $fname = $self->_demsng($person->prop('first name')->get)) {
+    my $mname  = $self->_demsng($person->prop('middle name')->get) || '';
+    my $lname  = $self->_demsng($person->prop('last name')->get)   || '';
+    my $suffix = $self->_demsng($person->prop('suffix')->get)      || '';
+
+    $name = $fname
+          . (length $mname  ? " $mname"  : '')
+          . (length $lname  ? " $lname"  : '')
+          . (length $suffix ? " $suffix" : '');
+  } else {
+    $name  = $self->_demsng($person->prop('name')->get);
+  }
+
   return App::Addex::Entry->new({
     name   => scalar $self->_demsng($person->prop('name')->get),
     nick   => scalar $self->_demsng($person->prop('nickname')->get),
