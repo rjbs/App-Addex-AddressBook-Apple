@@ -1,0 +1,12 @@
+Revision history for App-Addex-AddressBook-Appl
+
+0.004     2007-05-10
+          if possible, use the first name, middle name, etc. fields
+          this prevents problems with the "name" property being in an odd order
+
+0.003     2007-05-07
+          documentation fix
+
+0.002     2007-04-07
+          severed from App-Addex
+          now returns App::Addex::Entry objects
