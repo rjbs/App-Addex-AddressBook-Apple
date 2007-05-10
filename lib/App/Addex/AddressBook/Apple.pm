@@ -66,7 +66,7 @@ sub _entrify {
   }
 
   return App::Addex::Entry->new({
-    name   => scalar $self->_demsng($person->prop('name')->get),
+    name   => $name,
     nick   => scalar $self->_demsng($person->prop('nickname')->get),
     emails => \@emails,
     fields => \%fields,
