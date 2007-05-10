@@ -13,13 +13,13 @@ App::Addex::AddressBook::Apple - use Apple Address Book as the addex source
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
   $Id$
 
 =cut
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 
 =head1 SYNOPSIS
 
