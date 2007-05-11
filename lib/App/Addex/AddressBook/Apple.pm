@@ -5,6 +5,8 @@ use warnings;
 package App::Addex::AddressBook::Apple;
 use base qw(App::Addex::AddressBook);
 
+use App::Addex::Entry::EmailAddress;
+
 use Mac::Glue qw(:glue);
 
 =head1 NAME
@@ -13,13 +15,13 @@ App::Addex::AddressBook::Apple - use Apple Address Book as the addex source
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
   $Id$
 
 =cut
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 
 =head1 SYNOPSIS
 
@@ -41,8 +43,12 @@ sub _demsng {
 sub _entrify {
   my ($self, $person) = @_;
 
-  return unless my @emails = map { $self->_demsng($_->prop('value')->get) }
-                             $person->prop("email")->get;
+  return unless my @emails = map {
+    App::Addex::Entry::EmailAddress->new({
+      address => $self->_demsng($_->prop('value')->get),
+      label   => $self->_demsng($_->prop('label')->get),
+    });
+  } $person->prop("email")->get;
 
   my %fields;
   if (my $note = scalar $self->_demsng($person->prop('note')->get)) {

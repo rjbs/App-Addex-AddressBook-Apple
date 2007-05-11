@@ -1,4 +1,7 @@
-Revision history for App-Addex-AddressBook-Appl
+Revision history for App-Addex-AddressBook-Apple
+
+0.005     2007-05-11
+          use the App::Addex::Entry::EmailAddress class
 
 0.004     2007-05-10
           if possible, use the first name, middle name, etc. fields
