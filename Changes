@@ -1,6 +1,6 @@
 Revision history for App-Addex-AddressBook-Apple
 
-0.005     2007-05-11
+0.005     2007-09-21
           use the App::Addex::Entry::EmailAddress class
 
 0.004     2007-05-10

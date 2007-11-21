@@ -17,8 +17,6 @@ App::Addex::AddressBook::Apple - use Apple Address Book as the addex source
 
 version 0.005
 
-  $Id$
-
 =cut
 
 our $VERSION = '0.005';
