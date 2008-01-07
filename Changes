@@ -1,5 +1,8 @@
 Revision history for App-Addex-AddressBook-Apple
 
+0.006     2008-01-07
+          the default_email field now allows selection from multiple addrs
+
 0.005     2007-09-21
           use the App::Addex::Entry::EmailAddress class
 
