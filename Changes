@@ -1,6 +1,9 @@
 Revision history for App-Addex-AddressBook-Apple
 
-0.006     2008-02-17
+0.008     2008-02-17
+          silence a spurious warning in default_email code
+
+0.007     2008-02-17
           actually respect default_email, some minor refactoring
 
 0.006     2008-01-07

@@ -15,11 +15,11 @@ App::Addex::AddressBook::Apple - use Apple Address Book as the addex source
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =cut
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 
 =head1 SYNOPSIS
 
@@ -70,20 +70,23 @@ sub _entrify {
     $name  = $self->_demsng($person->prop('name')->get);
   }
 
-  if (@emails > 1 and my $default = $fields{default_email}) {
-    my $check;
-    if ($default =~ m{\A/(.+)/\z}) {
-      $default = qr/$1/;
-      $check   = sub { $_[0]->address =~ $default };
-    } else {
-      $check   = sub { $_[0]->label eq $default };
-    }
-
-    EMAIL: for my $i (0 .. $#emails) {
-      if ($check->($emails[$i])) {
-        unshift @emails, splice @emails, $i, 1 if $i != 0;
-        last EMAIL;
+  CHECK_DEFAULT: {
+    if (@emails > 1 and my $default = $fields{default_email}) {
+      my $check;
+      if ($default =~ m{\A/(.+)/\z}) {
+        $default = qr/$1/;
+        $check   = sub { $_[0]->address =~ $default };
+      } else {
+        $check   = sub { $_[0]->label eq $default };
       }
+
+      for my $i (0 .. $#emails) {
+        if ($check->($emails[$i])) {
+          unshift @emails, splice @emails, $i, 1 if $i != 0;
+          last CHECK_DEFAULT;
+        }
+      }
+
       warn "no email found for $name matching $fields{default_email}\n";
     }
   }
