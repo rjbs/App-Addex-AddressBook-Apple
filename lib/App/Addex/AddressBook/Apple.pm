@@ -57,17 +57,19 @@ sub _entrify {
 
   my $name;
 
+  use Encode;
   if (my $fname = $self->_demsng($person->prop('first name')->get)) {
-    my $mname  = $self->_demsng($person->prop('middle name')->get) || '';
-    my $lname  = $self->_demsng($person->prop('last name')->get)   || '';
-    my $suffix = $self->_demsng($person->prop('suffix')->get)      || '';
+       $fname  = Encode::decode(MacRoman => $fname);
+    my $mname  = Encode::decode(MacRoman => $self->_demsng($person->prop('middle name')->get) || '');
+    my $lname  = Encode::decode(MacRoman => $self->_demsng($person->prop('last name')->get)   || '');
+    my $suffix = Encode::decode(MacRoman => $self->_demsng($person->prop('suffix')->get)      || '');
 
     $name = $fname
           . (length $mname  ? " $mname"  : '')
           . (length $lname  ? " $lname"  : '')
           . (length $suffix ? " $suffix" : '');
   } else {
-    $name  = $self->_demsng($person->prop('name')->get);
+    $name  = Encode::decode(MacRoman => $self->_demsng($person->prop('name')->get));
   }
 
   CHECK_DEFAULT: {
