@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+use 5.008;
 use strict;
 use warnings;
 
@@ -135,7 +135,7 @@ notified of progress on your bug as I make changes.
 
 =head1 COPYRIGHT
 
-Copyright 2006-2007 Ricardo Signes, all rights reserved.
+Copyright 2006-2007 Ricardo Signes.
 
 This program is free software; you may redistribute it and/or modify it
 under the same terms as Perl itself.
