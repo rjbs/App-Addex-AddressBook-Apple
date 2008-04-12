@@ -6,6 +6,7 @@ package App::Addex::AddressBook::Apple;
 use base qw(App::Addex::AddressBook);
 
 use App::Addex::Entry::EmailAddress;
+use Encode ();
 
 use Mac::Glue qw(:glue);
 
@@ -38,6 +39,22 @@ sub _demsng {
   return $_[1];
 }
 
+sub _fix_str {
+  my ($self, $str) = @_;
+
+  return '' unless defined $str;
+  return $str if Encode::is_utf8($str);
+  Encode::decode(MacRoman => $str);
+
+  return $str;
+}
+
+sub _fix_prop {
+  my ($self, $prop) = @_;
+  my $str = $self->_demsng($prop->get);
+  return $self->_fix_str($str);
+}
+
 sub _entrify {
   my ($self, $person) = @_;
 
@@ -57,19 +74,18 @@ sub _entrify {
 
   my $name;
 
-  use Encode;
   if (my $fname = $self->_demsng($person->prop('first name')->get)) {
-       $fname  = Encode::decode(MacRoman => $fname);
-    my $mname  = Encode::decode(MacRoman => $self->_demsng($person->prop('middle name')->get) || '');
-    my $lname  = Encode::decode(MacRoman => $self->_demsng($person->prop('last name')->get)   || '');
-    my $suffix = Encode::decode(MacRoman => $self->_demsng($person->prop('suffix')->get)      || '');
+       $fname  = $self->_fix_str($fname);
+    my $mname  = $self->_fix_prop($person->prop('middle name'));
+    my $lname  = $self->_fix_prop($person->prop('last name'));
+    my $suffix = $self->_fix_prop($person->prop('suffix'));
 
     $name = $fname
           . (length $mname  ? " $mname"  : '')
           . (length $lname  ? " $lname"  : '')
           . (length $suffix ? " $suffix" : '');
   } else {
-    $name  = Encode::decode(MacRoman => $self->_demsng($person->prop('name')->get));
+    $name  = $self->_fix_prop($person->prop('name'));
   }
 
   CHECK_DEFAULT: {
