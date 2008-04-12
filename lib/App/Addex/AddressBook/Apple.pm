@@ -16,11 +16,11 @@ App::Addex::AddressBook::Apple - use Apple Address Book as the addex source
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =cut
 
-our $VERSION = '0.008';
+our $VERSION = '0.009';
 
 =head1 SYNOPSIS
 
@@ -44,9 +44,7 @@ sub _fix_str {
 
   return '' unless defined $str;
   return $str if Encode::is_utf8($str);
-  Encode::decode(MacRoman => $str);
-
-  return $str;
+  return Encode::decode(MacRoman => $str);
 }
 
 sub _fix_prop {
