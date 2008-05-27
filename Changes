@@ -1,5 +1,8 @@
 Revision history for App-Addex-AddressBook-Apple
 
+0.010     2008-05-27
+          fix packaging
+
 0.009     2008-04-12
           convert MacRoman strings; possibly weird for other strings
 
