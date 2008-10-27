@@ -16,7 +16,7 @@ App::Addex::AddressBook::Apple - use Apple Address Book as the addex source
 
 =head1 VERSION
 
-version 0.009
+version 0.012
 
 =cut
 
