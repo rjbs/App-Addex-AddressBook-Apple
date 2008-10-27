@@ -23,7 +23,6 @@
 ^_build
 ^cover_db
 ^.*\.bat$
-^META.yml
 
 # Temp, old, vi and emacs files.
 ^eg/
