@@ -8,4 +8,7 @@ requires('Mac::Glue'  => 0.000); # minimum unknown
 
 extra_tests;
 
+repository('http://github.com/rjbs/app-addex-addressbook-apple');
+auto_manifest;
+
 WriteAll();

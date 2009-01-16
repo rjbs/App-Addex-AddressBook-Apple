@@ -1,5 +1,8 @@
 Revision history for App-Addex-AddressBook-Apple
 
+0.014     2009-01-16
+          add repo to metadata
+
 0.013     2008-10-27
           fix packaging. again.
 
