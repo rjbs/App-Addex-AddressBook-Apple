@@ -33,3 +33,5 @@
 \.swp$
 \.bak$
 ^pod.*\.tmp$
+
+^App-Addex-AddressBook-Apple
