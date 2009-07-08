@@ -28,6 +28,11 @@ This module implements the L<App::Addex::AddressBook> interface for Mac OS X's
 Address Book application, using L<Mac::Glue> to get entries from the address
 book.
 
+You may need to set up glue for Address Book before this will work.  You can do
+this using F<gluemac> from L<Mac::Glue>
+
+    gluemac /Applications/Address\ Book.app
+
 =cut
 
 sub _glue {
