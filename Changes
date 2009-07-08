@@ -1,5 +1,9 @@
 Revision history for App-Addex-AddressBook-Apple
 
+0.016     2009-07-08
+          documentation tweak: mention the gluemac program (thanks, Kevin
+          Falcone)
+
 0.015     2009-01-16
           dist repair; do not self-package
 
