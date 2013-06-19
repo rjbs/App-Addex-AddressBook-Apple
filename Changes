@@ -1,6 +1,8 @@
 Revision history for App-Addex-AddressBook-Apple
 
 {{$NEXT}}
+
+0.017     2013-06-19 19:15:17 America/New_York
           point to AppleScript replacement; update bugtracker, etc.
 
 0.016     2009-07-08
