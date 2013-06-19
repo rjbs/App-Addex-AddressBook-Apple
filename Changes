@@ -1,5 +1,8 @@
 Revision history for App-Addex-AddressBook-Apple
 
+{{$NEXT}}
+          point to AppleScript replacement; update bugtracker, etc.
+
 0.016     2009-07-08
           documentation tweak: mention the gluemac program (thanks, Kevin
           Falcone)

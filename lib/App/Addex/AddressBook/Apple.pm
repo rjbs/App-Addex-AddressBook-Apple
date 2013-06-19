@@ -13,6 +13,10 @@ use Mac::Glue qw(:glue);
 
 =head1 SYNOPSIS
 
+B<Achtung!>  Using this requires L<Mac::Glue>.  Mac::Glue is not going to work
+on more recent OS X.  Instead, check out
+L<App::Addex::AddressBook::AppleScript>.
+
 This module implements the L<App::Addex::AddressBook> interface for Mac OS X's
 Address Book application, using L<Mac::Glue> to get entries from the address
 book.
