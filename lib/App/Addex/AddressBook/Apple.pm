@@ -4,7 +4,7 @@ use warnings;
 
 package App::Addex::AddressBook::Apple;
 use base qw(App::Addex::AddressBook);
-# ABSTRACT: use Apple Address Book as the addex source
+# ABSTRACT: use Apple Address Book as the addex source (doomed)
 
 use App::Addex::Entry::EmailAddress;
 use Encode ();

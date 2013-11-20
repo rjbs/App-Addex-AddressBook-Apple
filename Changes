@@ -1,6 +1,7 @@
 Revision history for App-Addex-AddressBook-Apple
 
 {{$NEXT}}
+          make note of AppleScript more noisy; update repo link
 
 0.017     2013-06-19 19:15:17 America/New_York
           point to AppleScript replacement; update bugtracker, etc.
