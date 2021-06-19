@@ -1,6 +1,8 @@
 Revision history for App-Addex-AddressBook-Apple
 
 {{$NEXT}}
+          author contact info updates
+          add perl-support section to docs
 
 0.018     2013-11-19 23:15:53 America/New_York
           make note of AppleScript more noisy; update repo link
